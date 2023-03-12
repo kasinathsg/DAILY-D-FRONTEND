@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.sidebar{
+    position: fixed;
+    /* left: ; */
+    /* width: 220px; */
+    height: 100%;
+    background-color: black;
+    /* display: none; */
+    transition: all 0.4s ease-in;
+    
+}
+
+.sidebar header{
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    line-height: 70px;
+    background-color: #063146;
+    user-select: none;
+}
+
+.sidebar ul a {
+    display: flex;
+    /* display: block; */
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    /* padding-left: 40px; */
+    box-sizing: border-box;
+
+}
+
+ .sidebar ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 80%;
+    
+}
+
+/* .sidebar ul li{
+    text-align: center;
+} */
+
+#check{
+    display: none;
+}
+
+label #btn, label #cancel{
+position: absolute;
+cursor: pointer;
+background: black;
+border-radius:3px ;
+
+
+
+}
+label #btn{
+    left: 20px;
+    top: 20px;
+    font-size: 35px;
+    color: red;
+    padding: 6px 12px;
+    transition: all .05s ;
+}
+
+label #cancel{
+    z-index: 1111;
+    left: -195px;
+    top: 10px;
+    /* font-size: 30px; */
+    color: #0a5275;
+    
+    transition: all 0.5s ease-in;
+}
+
+#check:checked ~ .sidebar{
+    left: 0;
+}
+#check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~ label #cancel{
+    left: 278px;
+}
+
+@media(max-width:1000px){
+    .sidebar{
+        left: -341px;
+        width: 341px;
+    }
+}
+@media(min-width:1000px){
+    label #btn{
+        display: none;
+    }
+
+    label #cancel{
+        display: none;
+    }
+}
+
+@media(max-width:380px){
+    .sidebar{
+        width:fit-content;
+        /* padding-right: 2rem; */
+        left: -90%;
+    }
+
+    label #cancel{
+        z-index: 1111;
+        left: -195px;
+        top: 2px;
+        /* font-size: 1px; */
+        color: #0a5275;
+        /* padding: 4px 9px; */
+        transition: all 0.5s ease-in;
+    }
+
+
+#check:checked ~ label #cancel{
+    left: 210px;
+}
+}
+
+@media(min-width:380px){
+    label #cancel{
+        position: fixed;
+        font-size: 30px;
+        padding: 4px 9px;
+    }
+
+
+
+}
+
